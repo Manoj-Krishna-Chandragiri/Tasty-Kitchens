@@ -184,6 +184,9 @@ class Home extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
+      arrows: true,
+      prevArrow: <button type="button" className="slick-prev custom-prev">‹</button>,
+      nextArrow: <button type="button" className="slick-next custom-next">›</button>,
     };
 
     return (
