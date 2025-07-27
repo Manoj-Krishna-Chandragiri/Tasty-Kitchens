@@ -1150,6 +1150,182 @@ export const mockApiService = {
       }
     }
   },
+
+  // Mock search restaurants API
+  searchRestaurants: async (query, offset = 0, limit = 9) => {
+    await new Promise(resolve => setTimeout(resolve, 800))
+
+    const allRestaurants = [
+      {
+        id: '2200',
+        name: 'Paradise Restaurant',
+        cuisine: 'Indian, Hyderabadi Biryani',
+        image_url:
+          'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop&crop=center',
+        user_rating: {
+          rating: 4.7,
+          total_reviews: 2456,
+        },
+      },
+      {
+        id: '2201',
+        name: 'Biryani House',
+        cuisine: 'Indian, Biryani, Mughlai',
+        image_url:
+          'https://b.zmtcdn.com/data/pictures/7/20905207/8b454e8e102c27d05fde08a717ff5b19.jpeg?fit=around|960:500&crop=960:500;*,*',
+        user_rating: {
+          rating: 4.5,
+          total_reviews: 1834,
+        },
+      },
+      {
+        id: '2202',
+        name: 'Punjabi Dhaba',
+        cuisine: 'North Indian, Punjabi',
+        image_url:
+          'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=300&fit=crop&crop=center',
+        user_rating: {
+          rating: 4.4,
+          total_reviews: 1245,
+        },
+      },
+      {
+        id: '2203',
+        name: 'South Indian Express',
+        cuisine: 'South Indian, Traditional',
+        image_url:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUKfrk_M3TYMKDE8nePyR6KQFTRkUNljRcOQ&s',
+        user_rating: {
+          rating: 4.6,
+          total_reviews: 987,
+        },
+      },
+      {
+        id: '2204',
+        name: "Domino's Pizza",
+        cuisine: 'Italian, Pizza, Fast Food',
+        image_url:
+          'https://content.jdmagicbox.com/v2/comp/hyderabad/d2/040pxx40.xx40.000806941663.u1d2/catalogue/domino-s-pizza-sarojini-devi-road-hyderabad-pizza-outlets-498dvkg.jpg',
+        user_rating: {
+          rating: 4.2,
+          total_reviews: 1567,
+        },
+      },
+      {
+        id: '2205',
+        name: 'KFC',
+        cuisine: 'American, Fried Chicken',
+        image_url:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqihAPqxJDmZtz-5efUx9MADE0chOJvaYfog&s',
+        user_rating: {
+          rating: 4.1,
+          total_reviews: 1890,
+        },
+      },
+      {
+        id: '2206',
+        name: "McDonald's",
+        cuisine: 'American, Burgers, Fast Food',
+        image_url:
+          'https://content.jdmagicbox.com/v2/comp/hyderabad/h6/040pxx40.xx40.220422203335.y8h6/catalogue/mcdonald-s-rajendra-nagar-hyderabad-fast-food-lkwi905wlw.jpg',
+        user_rating: {
+          rating: 4.3,
+          total_reviews: 2134,
+        },
+      },
+      {
+        id: '2207',
+        name: 'Burger King',
+        cuisine: 'American, Burgers',
+        image_url:
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/b0/47/7b/burger-king.jpg?w=900&h=500&s=1',
+        user_rating: {
+          rating: 4.0,
+          total_reviews: 1456,
+        },
+      },
+      {
+        id: '2208',
+        name: 'Taco Bell',
+        cuisine: 'Mexican, Fast Food',
+        image_url:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9u5dRpeJJqb2bW_FrIjdHkV8fhATOmTh0JA&s',
+        user_rating: {
+          rating: 3.9,
+          total_reviews: 876,
+        },
+      },
+      {
+        id: '2209',
+        name: "Haldiram's",
+        cuisine: 'Indian, Sweets, Snacks',
+        image_url:
+          'https://content.jdmagicbox.com/v2/comp/hyderabad/r5/040pxx40.xx40.220327203250.z4r5/catalogue/haldiram-s-silpa-gram-craft-village-hyderabad-namkeen-retailers-nPLsEkT5sY.jpg',
+        user_rating: {
+          rating: 4.3,
+          total_reviews: 1234,
+        },
+      },
+      {
+        id: '2210',
+        name: 'Barbeque Nation',
+        cuisine: 'Indian, Barbeque, Buffet',
+        image_url:
+          'https://www.barbequenation.com/_next/image?url=%2Fimages%2Fservice1.jpg&w=1200&q=75',
+        user_rating: {
+          rating: 4.4,
+          total_reviews: 945,
+        },
+      },
+      {
+        id: '2211',
+        name: 'Subway',
+        cuisine: 'American, Sandwiches, Healthy',
+        image_url:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM9_exaCA5rfZrP_goz0hb7JRTOiiSNM1CBA&s',
+        user_rating: {
+          rating: 4.1,
+          total_reviews: 1167,
+        },
+      },
+      {
+        id: '2212',
+        name: 'Andhra Spice Kitchen',
+        cuisine: 'Andhra Pradesh, South Indian, Spicy',
+        image_url:
+          'https://b.zmtcdn.com/data/pictures/4/20605574/8a393906611dd7d0002fa6b70a3a52be_featured_v2.jpg',
+        user_rating: {
+          rating: 4.6,
+          total_reviews: 1892,
+        },
+      },
+      {
+        id: '2213',
+        name: 'Tamil Traditional Mess',
+        cuisine: 'Tamil Nadu, South Indian, Traditional',
+        image_url:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl4RPyH1B9buCZbciwfxK_KFr3kel18xJvNHALGO0KoEPJlv8SCdmVkO80JHe013FdtgM&usqp=CAU',
+        user_rating: {
+          rating: 4.5,
+          total_reviews: 1456,
+        },
+      },
+    ]
+
+    // Filter restaurants based on search query
+    const filteredRestaurants = allRestaurants.filter(restaurant => 
+      restaurant.name.toLowerCase().includes(query.toLowerCase()) ||
+      restaurant.cuisine.toLowerCase().includes(query.toLowerCase())
+    )
+
+    return {
+      ok: true,
+      data: {
+        restaurants: filteredRestaurants, // Return all filtered for client-side pagination
+        total: filteredRestaurants.length,
+      },
+    }
+  },
 }
 
 // Flag to determine whether to use mock API (for development)

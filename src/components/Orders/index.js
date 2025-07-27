@@ -62,7 +62,7 @@ class Orders extends Component {
   renderNoOrdersView = () => (
     <div className="no-orders-container">
       <img
-        src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/no-orders.png"
+        src="https://res.cloudinary.com/dbnkhibzi/image/upload/v1753591666/WhatsApp_Image_2025-07-27_at_10.06.52_591a4928_tnojkc.jpg"
         className="no-orders-image"
         alt="no orders"
       />

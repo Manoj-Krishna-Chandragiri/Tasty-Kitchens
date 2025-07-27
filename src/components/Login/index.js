@@ -22,7 +22,10 @@ class Login extends Component {
   };
 
   onSubmitSuccess = jwtToken => {
+    const { username } = this.state;
     Cookies.set('jwt_token', jwtToken, { expires: 30 });
+    // Store username for profile page
+    localStorage.setItem('username', username);
     this.setState({ isLoading: false });
     // Navigate to home will be handled by redirect
   };

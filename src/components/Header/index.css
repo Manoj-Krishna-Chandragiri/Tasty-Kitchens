@@ -55,7 +55,7 @@
 }
 
 .nav-menu-item {
-  margin: 0 20px;
+  margin: 0 12px;
 }
 
 .nav-link {
@@ -107,10 +107,14 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .nav-menu-item-mobile {
-    margin: 0 10px;
+    margin: 4px;
+    flex: 1;
+    min-width: fit-content;
   }
 
   .logout-mobile-btn {

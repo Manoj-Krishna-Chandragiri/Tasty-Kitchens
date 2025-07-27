@@ -1,0 +1,176 @@
+.availability-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.availability-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.availability-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.availability-title {
+  color: #183b56;
+  font-family: "DM Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.current-time {
+  color: #64748b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  padding: 8px 16px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.availability-section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.open-title {
+  color: #059669;
+}
+
+.closed-title {
+  color: #dc2626;
+}
+
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.availability-restaurant-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.availability-restaurant-card:hover {
+  transform: translateY(-4px);
+}
+
+.availability-info {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 8px 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.availability-status {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.availability-status.open {
+  color: #059669;
+}
+
+.availability-status.closed {
+  color: #dc2626;
+}
+
+.availability-timing {
+  text-align: center;
+}
+
+.timing-text {
+  color: #64748b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.next-available {
+  color: #f59e0b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 2px 0 0 0;
+  line-height: 1.3;
+}
+
+.no-restaurants {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .availability-content {
+    padding: 20px 10px;
+  }
+
+  .availability-title {
+    font-size: 28px;
+  }
+
+  .current-time {
+    font-size: 16px;
+  }
+
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .availability-info {
+    position: static;
+    background-color: #ffffff;
+    border-radius: 0;
+    padding: 12px;
+    box-shadow: none;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .availability-status {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .timing-text,
+  .next-available {
+    font-size: 14px;
+  }
+}

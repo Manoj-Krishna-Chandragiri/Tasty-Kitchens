@@ -7,23 +7,26 @@ export const orderService = {
     const orderId = 'ORD' + Date.now();
     const order = {
       id: orderId,
-      userId: orderData.userId,
+      userId: orderData.userId || localStorage.getItem('username') || 'guest',
+      restaurantId: orderData.restaurantId,
+      restaurantName: orderData.restaurantName,
       items: orderData.items,
       totalAmount: orderData.totalAmount,
+      totalPrice: orderData.totalAmount, // For profile stats
       orderDate: new Date().toISOString(),
       status: 'Confirmed',
       deliveryAddress: orderData.deliveryAddress || 'Default Address',
       estimatedDeliveryTime: '30-40 mins',
     };
 
-    // Get existing orders from localStorage
-    const existingOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+    // Get existing orders from localStorage (use 'orders' for consistency)
+    const existingOrders = JSON.parse(localStorage.getItem('orders')) || [];
     
     // Add new order
     existingOrders.push(order);
     
     // Save to localStorage
-    localStorage.setItem('userOrders', JSON.stringify(existingOrders));
+    localStorage.setItem('orders', JSON.stringify(existingOrders));
     
     return {
       ok: true,
@@ -39,7 +42,7 @@ export const orderService = {
   getUserOrders: async (userId) => {
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    const allOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+    const allOrders = JSON.parse(localStorage.getItem('orders')) || [];
     const userOrders = allOrders.filter(order => order.userId === userId);
     
     return {
@@ -54,7 +57,7 @@ export const orderService = {
   getOrderDetails: async (orderId) => {
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    const allOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+    const allOrders = JSON.parse(localStorage.getItem('orders')) || [];
     const order = allOrders.find(order => order.id === orderId);
     
     if (order) {
@@ -99,19 +102,9 @@ export const orderService = {
 
 // User service for managing user data
 export const userService = {
-  // Get current user ID from JWT token
+  // Get current user ID from localStorage (consistent with Profile component)
   getCurrentUserId: () => {
-    const token = document.cookie.split(';').find(cookie => cookie.trim().startsWith('jwt_token='));
-    if (token) {
-      // In a real app, you'd decode the JWT token to get user ID
-      // For now, we'll use a simple approach
-      const tokenValue = token.split('=')[1];
-      if (tokenValue.includes('rahul')) return 'user_rahul';
-      if (tokenValue.includes('henry')) return 'user_henry';
-      if (tokenValue.includes('manoj')) return 'user_manoj';
-      return 'user_unknown';
-    }
-    return null;
+    return localStorage.getItem('username') || null;
   },
 
   // Get user profile information
@@ -119,22 +112,22 @@ export const userService = {
     await new Promise(resolve => setTimeout(resolve, 500));
     
     const userProfiles = {
-      'user_rahul': {
-        id: 'user_rahul',
+      'rahul': {
+        id: 'rahul',
         name: 'Rahul Kumar',
         email: 'rahul@example.com',
         phone: '+91 9876543210',
         address: 'Gachibowli, Hyderabad, Telangana',
       },
-      'user_henry': {
-        id: 'user_henry',
+      'henry': {
+        id: 'henry',
         name: 'Henry Williams',
         email: 'henry@example.com',
         phone: '+91 8765432109',
         address: 'Madhapur, Hyderabad, Telangana',
       },
-      'user_manoj': {
-        id: 'user_manoj',
+      'manoj': {
+        id: 'manoj',
         name: 'Manoj Kumar',
         email: 'manoj@example.com',
         phone: '+91 7654321098',

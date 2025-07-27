@@ -176,6 +176,19 @@ class Home extends Component {
   renderOffersSlider = () => {
     const { offersList } = this.state;
 
+    // Custom arrow components
+    const PrevArrow = ({ onClick }) => (
+      <button type="button" className="slick-prev custom-prev" onClick={onClick}>
+        ‹
+      </button>
+    );
+
+    const NextArrow = ({ onClick }) => (
+      <button type="button" className="slick-next custom-next" onClick={onClick}>
+        ›
+      </button>
+    );
+
     const settings = {
       dots: true,
       infinite: true,
@@ -185,8 +198,8 @@ class Home extends Component {
       autoplay: true,
       autoplaySpeed: 3000,
       arrows: true,
-      prevArrow: <button type="button" className="slick-prev custom-prev">‹</button>,
-      nextArrow: <button type="button" className="slick-next custom-next">›</button>,
+      prevArrow: <PrevArrow />,
+      nextArrow: <NextArrow />,
     };
 
     return (

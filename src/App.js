@@ -7,6 +7,9 @@ import Home from './components/Home';
 import RestaurantDetails from './components/RestaurantDetails';
 import Cart from './components/Cart';
 import Orders from './components/Orders';
+import Profile from './components/Profile';
+import Search from './components/Search';
+import RestaurantAvailability from './components/RestaurantAvailability';
 import ProtectedRoute from './components/ProtectedRoute';
 import NotFound from './components/NotFound';
 
@@ -53,6 +56,9 @@ function App() {
           <Route path="/restaurant/:id" element={<ProtectedRoute><RestaurantDetails /></ProtectedRoute>} />
           <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
           <Route path="/orders" element={<ProtectedRoute><Orders /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/search" element={<ProtectedRoute><Search /></ProtectedRoute>} />
+          <Route path="/availability" element={<ProtectedRoute><RestaurantAvailability /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

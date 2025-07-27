@@ -35,6 +35,21 @@ const HeaderWithRouter = () => {
               </Link>
             </li>
             <li className="nav-menu-item">
+              <Link to="/search" className={getActiveClass('/search')}>
+                Search
+              </Link>
+            </li>
+            <li className="nav-menu-item">
+              <Link to="/availability" className={getActiveClass('/availability')}>
+                Availability
+              </Link>
+            </li>
+            <li className="nav-menu-item">
+              <Link to="/profile" className={getActiveClass('/profile')}>
+                Profile
+              </Link>
+            </li>
+            <li className="nav-menu-item">
               <Link to="/cart" className={getActiveClass('/cart')}>
                 Cart
               </Link>
@@ -58,6 +73,21 @@ const HeaderWithRouter = () => {
             <li className="nav-menu-item-mobile">
               <Link to="/" className={getActiveClass('/')}>
                 Home
+              </Link>
+            </li>
+            <li className="nav-menu-item-mobile">
+              <Link to="/search" className={getActiveClass('/search')}>
+                Search
+              </Link>
+            </li>
+            <li className="nav-menu-item-mobile">
+              <Link to="/availability" className={getActiveClass('/availability')}>
+                Availability
+              </Link>
+            </li>
+            <li className="nav-menu-item-mobile">
+              <Link to="/profile" className={getActiveClass('/profile')}>
+                Profile
               </Link>
             </li>
             <li className="nav-menu-item-mobile">

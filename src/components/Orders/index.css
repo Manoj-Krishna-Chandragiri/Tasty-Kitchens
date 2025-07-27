@@ -82,20 +82,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  min-height: 500px;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .no-orders-image {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 24px;
+  width: 350px;
+  height: 350px;
+  max-width: 90vw;
+  max-height: 40vh;
+  margin-bottom: 32px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.no-orders-image:hover {
+  transform: scale(1.05);
 }
 
 .no-orders-heading {
   color: #183b56;
   font-family: "Roboto", sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   margin-bottom: 16px;
 }
@@ -103,10 +112,10 @@
 .no-orders-description {
   color: #64748b;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 32px;
   line-height: 1.5;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .explore-restaurants-btn {
@@ -199,14 +208,53 @@
     text-align: left;
   }
 
+  .no-orders-container {
+    min-height: 400px;
+    padding: 20px 10px;
+  }
+
   .no-orders-image,
   .failure-image {
-    width: 150px;
-    height: 150px;
+    width: 280px;
+    height: 280px;
+    max-width: 85vw;
+    max-height: 35vh;
+    margin-bottom: 24px;
   }
 
   .no-orders-heading,
   .failure-heading {
-    font-size: 24px;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .no-orders-description {
+    font-size: 16px;
+    max-width: 350px;
+  }
+
+  .explore-restaurants-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .no-orders-image,
+  .failure-image {
+    width: 220px;
+    height: 220px;
+    max-width: 80vw;
+    max-height: 30vh;
+  }
+
+  .no-orders-heading,
+  .failure-heading {
+    font-size: 22px;
+  }
+
+  .no-orders-description {
+    font-size: 14px;
+    max-width: 280px;
   }
 }

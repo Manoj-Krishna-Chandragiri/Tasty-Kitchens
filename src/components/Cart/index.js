@@ -72,6 +72,8 @@ class Cart extends Component {
     try {
       const orderData = {
         userId,
+        restaurantId: 'multi', // Since cart can have items from multiple restaurants
+        restaurantName: 'Various Restaurants',
         items: cartData,
         totalAmount: this.getTotalPrice(),
         ...customerDetails,
@@ -111,7 +113,7 @@ class Cart extends Component {
   renderEmptyCartView = () => (
     <div className="empty-cart-container">
       <img
-        src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/empty-cart.png"
+        src="https://img.freepik.com/premium-vector/empty-cart_701961-7086.jpg"
         className="empty-cart-image"
         alt="empty cart"
       />
