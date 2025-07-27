@@ -1,0 +1,167 @@
+.restaurant-details-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.restaurant-details-responsive-container {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.restaurant-details-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-banner {
+  display: flex;
+  padding: 24px;
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.restaurant-details-image {
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+
+.restaurant-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.restaurant-details-name {
+  font-family: "DM Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+
+.restaurant-details-cuisine {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: #cbd5e1;
+}
+
+.restaurant-details-location {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+  color: #cbd5e1;
+}
+
+.restaurant-rating-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rating-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating-star {
+  width: 16px;
+  height: 16px;
+}
+
+.restaurant-rating {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #f7931e;
+}
+
+.restaurant-reviews {
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.separator {
+  border: none;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0;
+}
+
+.food-items-list {
+  padding: 24px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.failure-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  text-align: center;
+}
+
+.failure-heading {
+  color: #183b56;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.failure-description {
+  color: #64748b;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .restaurant-details-responsive-container {
+    padding: 10px;
+  }
+
+  .restaurant-banner {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .restaurant-details-image {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .restaurant-details-name {
+    font-size: 24px;
+  }
+
+  .food-items-list {
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .restaurant-rating-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

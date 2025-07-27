@@ -1,0 +1,140 @@
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cart-responsive-container {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1110px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  text-align: center;
+}
+
+.empty-cart-image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 24px;
+}
+
+.empty-cart-heading {
+  color: #183b56;
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.empty-cart-description {
+  color: #64748b;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.cart-content-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-list {
+  padding: 0;
+  margin: 0 0 24px 0;
+  list-style-type: none;
+}
+
+.cart-hr-line {
+  border: none;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 24px 0;
+}
+
+.cart-total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.order-total-label {
+  color: #183b56;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.order-total-value {
+  color: #f7931e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.place-order-button {
+  background-color: #f7931e;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  outline: none;
+  align-self: flex-end;
+}
+
+.place-order-button:hover {
+  background-color: #e67e22;
+}
+
+@media screen and (max-width: 767px) {
+  .cart-responsive-container {
+    padding: 10px;
+  }
+
+  .cart-content-container {
+    padding: 16px;
+  }
+
+  .empty-cart-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .empty-cart-heading {
+    font-size: 24px;
+  }
+
+  .order-total-label,
+  .order-total-value {
+    font-size: 20px;
+  }
+
+  .cart-total-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .place-order-button {
+    width: 100%;
+  }
+}
