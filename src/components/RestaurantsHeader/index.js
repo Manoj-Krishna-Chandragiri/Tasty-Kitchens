@@ -27,7 +27,7 @@ const RestaurantsHeader = props => {
               className="sort-select"
             >
               {sortByOptions.map(eachOption => (
-                <option key={eachOption.id} value={eachOption.optionId}>
+                <option key={eachOption.id} value={eachOption.value}>
                   {eachOption.displayText}
                 </option>
               ))}

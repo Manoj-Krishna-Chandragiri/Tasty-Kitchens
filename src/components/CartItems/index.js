@@ -1,6 +1,5 @@
 import {FaRupeeSign} from 'react-icons/fa'
 import FoodContext from '../../Context/FoodContext'
-import Counter from '../Counter'
 import './index.css'
 
 const CartItems = props => (
@@ -11,26 +10,48 @@ const CartItems = props => (
       const {id, name, cost, quantity, imageUrl} = cartItem
       const itemPrice = cost * quantity
 
+      const onDecrement = () => {
+        decreaseQuantity(id)
+      }
+
+      const onIncrement = () => {
+        increaseQuantity(id)
+      }
+
       return (
-        <div className="cart-items-list" data-testid="cartItem">
+        <li className="cart-items-list-container" testid="cartItem">
           <img className="cart-img" alt={name} src={imageUrl} />
-          <div className="cart-items-container">
-            <h1 className="item-title">{name}</h1>
-            <div className="quantity-price-container">
-              <Counter
-                key={id}
-                quantity={quantity}
-                foodId={id}
-                increaseQuantity={increaseQuantity}
-                decreaseQuantity={decreaseQuantity}
-              />
-              <p className="cart-item-price" data-testid="item-cost">
-                <FaRupeeSign />
-                {itemPrice}.00
-              </p>
-            </div>
+          <h1 className="item-title">{name}</h1>
+
+          <div className="quantity-controls-container">
+            {/* INLINED COUNTER LOGIC */}
+            <button
+              type="button"
+              className="quantity-button"
+              testid="decrement-quantity"
+              onClick={onDecrement}
+            >
+              -
+            </button>
+            <p className="food-quantity" testid="item-quantity">
+              {quantity}
+            </p>
+            <button
+              type="button"
+              className="quantity-button"
+              testid="increment-quantity"
+              onClick={onIncrement}
+            >
+              +
+            </button>
           </div>
-        </div>
+          {/* END INLINED COUNTER LOGIC */}
+
+          <p className="cart-item-price" testid="item-cost">
+            <FaRupeeSign />
+            {itemPrice}.00
+          </p>
+        </li>
       )
     }}
   </FoodContext.Consumer>

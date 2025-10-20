@@ -7,40 +7,33 @@ import FoodContext from '../../Context/FoodContext'
 import './index.css'
 
 class FoodItems extends Component {
-  state = {
-    quantity: 0,
-  }
-
   render() {
     return (
       <FoodContext.Consumer>
         {value => {
-          const {increaseQuantity, decreaseQuantity, addCartItem} = value
+          const {increaseQuantity, decreaseQuantity, addCartItem, cartList} =
+            value
           const {itemDetails} = this.props
           const {id, imageUrl, name, cost, rating} = itemDetails
-          const {quantity} = this.state
+
+          // Find the quantity from cart list
+          const cartItem = cartList.find(item => item.id === id)
+          const quantity = cartItem ? cartItem.quantity : 0
 
           const onClickAddButton = () => {
-            this.setState(
-              prevState => ({
-                quantity: prevState.quantity + 1,
-              }),
-              addCartItem({...itemDetails, quantity: quantity + 1}),
-            )
+            addCartItem({...itemDetails, quantity: 1})
           }
 
           const onDecreaseQuantity = () => {
-            this.setState(prevState => ({quantity: prevState.quantity - 1}))
             decreaseQuantity(id)
           }
 
           const onIncreaseQuantity = () => {
-            this.setState(prevState => ({quantity: prevState.quantity + 1}))
             increaseQuantity(id)
           }
 
           return (
-            <li className="food-list">
+            <li className="food-list" testid="foodItem">
               <img src={imageUrl} alt={name} className="food-image" />
               <div className="food-details">
                 <h1 className="food-name">{name}</h1>
@@ -66,14 +59,18 @@ class FoodItems extends Component {
                     <button
                       type="button"
                       className="decrement-count"
+                      testid="decrement-count"
                       onClick={onDecreaseQuantity}
                     >
                       <BsDashSquare className="quantity-icon" />
                     </button>
-                    <p className="active-count">{quantity}</p>
+                    <p className="active-count" testid="active-count">
+                      {quantity}
+                    </p>
                     <button
                       type="button"
                       className="increment-count"
+                      testid="increment-count"
                       onClick={onIncreaseQuantity}
                     >
                       <BsPlusSquare className="quantity-icon" />
