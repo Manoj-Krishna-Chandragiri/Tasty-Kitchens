@@ -107,7 +107,11 @@ class Restaurants extends Component {
   }
 
   renderLoader = () => (
+<<<<<<< HEAD
     <div className="restaurants-loader" testid="restaurants-list-loader">
+=======
+    <div className="restaurants-loader" data-testid="restaurants-list-loader">
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
       <Loader type="Oval" color="#F7931E" width="100%" height="100%" />
     </div>
   )
@@ -149,7 +153,11 @@ class Restaurants extends Component {
           <button
             type="button"
             className="page-button"
+<<<<<<< HEAD
             testid="pagination-left-button"
+=======
+            data-testid="pagination-left-button"
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
             onClick={this.paginationDecrement}
             // Add disabled check for clarity, though not strictly required by test
             disabled={activePage === 1}
@@ -157,6 +165,7 @@ class Restaurants extends Component {
             <IoIosArrowBack />
           </button>
 
+<<<<<<< HEAD
           {/* FIX: Modify the element with testid="active-page-number" 
               to contain ONLY the page number, and move "of 4" outside 
               to satisfy test cases 93, 108, and 109. */}
@@ -165,12 +174,20 @@ class Restaurants extends Component {
               {activePage}
             </span>
             <span className="total-page-count"> of 4</span>
+=======
+          <p className="page-number" data-testid="active-page-number">
+            <span>{activePage}</span> of 4
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
           </p>
 
           <button
             type="button"
             className="page-button"
+<<<<<<< HEAD
             testid="pagination-right-button"
+=======
+            data-testid="pagination-right-button"
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
             onClick={this.paginationIncrement}
             // Add disabled check for clarity, though not strictly required by test
             disabled={activePage === 4}

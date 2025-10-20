@@ -11,8 +11,17 @@ class FoodItems extends Component {
     return (
       <FoodContext.Consumer>
         {value => {
+<<<<<<< HEAD
           const {increaseQuantity, decreaseQuantity, addCartItem, cartList} =
             value
+=======
+          const {
+            increaseQuantity,
+            decreaseQuantity,
+            addCartItem,
+            cartList,
+          } = value
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
           const {itemDetails} = this.props
           const {id, imageUrl, name, cost, rating} = itemDetails
 
@@ -33,7 +42,11 @@ class FoodItems extends Component {
           }
 
           return (
+<<<<<<< HEAD
             <li className="food-list" testid="foodItem">
+=======
+            <li className="food-list" data-testid="foodItem">
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
               <img src={imageUrl} alt={name} className="food-image" />
               <div className="food-details">
                 <h1 className="food-name">{name}</h1>
@@ -59,18 +72,30 @@ class FoodItems extends Component {
                     <button
                       type="button"
                       className="decrement-count"
+<<<<<<< HEAD
                       testid="decrement-count"
+=======
+                      data-testid="decrement-count"
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
                       onClick={onDecreaseQuantity}
                     >
                       <BsDashSquare className="quantity-icon" />
                     </button>
+<<<<<<< HEAD
                     <p className="active-count" testid="active-count">
+=======
+                    <p className="active-count" data-testid="active-count">
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
                       {quantity}
                     </p>
                     <button
                       type="button"
                       className="increment-count"
+<<<<<<< HEAD
                       testid="increment-count"
+=======
+                      data-testid="increment-count"
+>>>>>>> 63573d9390cc98368ff2ac83efa2b13d9a61f628
                       onClick={onIncreaseQuantity}
                     >
                       <BsPlusSquare className="quantity-icon" />
